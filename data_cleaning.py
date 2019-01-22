@@ -31,3 +31,10 @@ def concat_col_str_condition(df):
     mask = df['col_1'].str.endswith('pil',na=False)
     col_new = df[mask]['col_1'] + df[mask]['col_2']
     
+
+# timestamp to date string
+
+def convert(x):
+    return datetime.fromtimestamp(x).strftime('%Y-%m-%d')
+    
+df['START_ETIME'].apply(convert)
